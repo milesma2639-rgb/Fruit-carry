@@ -1,5 +1,6 @@
 # Fruit Carry
 
+A platformer browser game: carry a basket of fruit, avoid touching hazards, collect fruit on platforms, and make it to your grandparents' house.
 A simple browser game: carry a basket of fruit, jump over obstacles, collect fruit on the ground, and make it to your grandparents' house.
 
 Project files:
@@ -9,6 +10,10 @@ Project files:
 
 ## Gameplay
 
+- **Move** with `←/→` or `A/D`.
+- **Jump** with `Space`, `↑`, or `W`.
+- Don't touch hazards/spikes. If you do, the screen blacks out briefly and you restart from your latest checkpoint.
+- Collect fruit pickups along platforms to increase your basket count.
 - **Jump** with `Space` or `↑`.
 - If you collide with an obstacle, fruit spills, the screen blacks out briefly, and you restart from the **most recent checkpoint**.
 - Collect fruit pickups along the way to increase your basket count.
