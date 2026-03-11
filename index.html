@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruit Carry: Grandparents' House</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #1e293b;
+      --text: #f8fafc;
+      --accent: #f97316;
+      --good: #10b981;
+      --warn: #facc15;
+      --bad: #ef4444;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(circle at top, #1d4ed8 0%, var(--bg) 55%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .wrap {
+      width: min(980px, 96vw);
+      background: rgb(15 23 42 / 0.82);
+      border: 1px solid rgb(148 163 184 / 0.35);
+      border-radius: 14px;
+      box-shadow: 0 18px 48px rgb(2 6 23 / 0.5);
+      padding: 14px;
+    }
+
+    h1 {
+      margin: 6px 0 8px;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      color: #fde68a;
+      text-align: center;
+    }
+
+    p {
+      margin: 0;
+      text-align: center;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    .hud {
+      margin: 10px 0 12px;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid rgb(148 163 184 / 0.24);
+      border-radius: 10px;
+      padding: 8px 10px;
+      text-align: center;
+    }
+
+    .label {
+      font-size: 0.74rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .value {
+      margin-top: 4px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgb(148 163 184 / 0.45);
+      background: linear-gradient(to top, #14532d 0 30%, #67e8f9 30% 100%);
+    }
+
+    .controls {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #111827;
+      font-weight: 700;
+      padding: 10px 16px;
+      cursor: pointer;
+    }
+
+    .hint { margin-top: 8px; font-size: 0.86rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Fruit Carry: Grandparents' House</h1>
+    <p>Jump over obstacles, keep fruits in your basket, gather more, and reach your grandparents' house.</p>
+    <section class="hud">
+      <article class="card"><div class="label">Fruits in Basket</div><div id="basketCount" class="value">0</div></article>
+      <article class="card"><div class="label">Collected on Road</div><div id="collectedCount" class="value">0</div></article>
+      <article class="card"><div class="label">Checkpoint</div><div id="checkpointCount" class="value">0</div></article>
+      <article class="card"><div class="label">Distance</div><div id="distance" class="value">0 m</div></article>
+      <article class="card"><div class="label">State</div><div id="state" class="value">Running</div></article>
+    </section>
+    <canvas id="game" width="940" height="420"></canvas>
+    <div class="controls">
+      <button id="restartBtn">Restart Journey</button>
+    </div>
+    <p class="hint">Controls: Space / ↑ to jump, R to restart after finishing.</p>
+  </main>
+
+  <script src="game.js"></script>
+
+</body>
+</html>
